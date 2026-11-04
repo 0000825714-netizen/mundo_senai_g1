@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SENAI | Portal do Aluno</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topo">
+    <div class="logo">
+        <div class="logo-icone">S</div>
+        <div>
+            <h1>SENAI</h1>
+            <p>Portal de Cadastro Acadêmico</p>
+        </div>
+    </div>
+
+    <div class="status">
+        <span>●</span> Sistema de cadastro
+    </div>
+</header>
+
+<main>
+
+    <section class="boas-vindas">
+        <p class="etiqueta">Área acadêmica</p>
+        <h2>Cadastro de alunos</h2>
+        <p>Gerencie os dados pessoais, endereços e informações dos cursos em um só lugar.</p>
+    </section>
+
+    <section class="resumo">
+        <div class="resumo-card">
+            <div class="resumo-icone">♙</div>
+            <div>
+                <p>Alunos registrados</p>
+                <strong id="total">0</strong>
+            </div>
+        </div>
+
+        <div class="resumo-card">
+            <div class="resumo-icone">✓</div>
+            <div>
+                <p>Validação</p>
+                <strong style="font-size:17px">Ativa</strong>
+            </div>
+        </div>
+
+        <div class="resumo-card">
+            <div class="resumo-icone">▤</div>
+            <div>
+                <p>Armazenamento</p>
+                <strong style="font-size:17px">Local</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="painel">
+        <div class="painel-topo">
+            <div>
+                <h3>Novo cadastro</h3>
+                <p>Preencha os campos para registrar um aluno.</p>
+            </div>
+            <span class="tag">FORMULÁRIO OFICIAL DO PROJETO</span>
+        </div>
+
+        <form id="formulario" novalidate>
+
+            <fieldset>
+                <legend>
+                    <span class="numero-secao">01</span>
+                    Dados pessoais
+                </legend>
+
+                <div class="grid">
+                    <div class="campo largo">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" maxlength="100"
+                            placeholder="Ex.: Maria Oliveira Santos" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" inputmode="numeric"
+                            maxlength="14" placeholder="000.000.000-00" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" maxlength="120"
+                            placeholder="nome@exemplo.com" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input id="telefone" type="tel" maxlength="15"
+                            inputmode="numeric" placeholder="(31) 99999-9999" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="nascimento">Data de nascimento</label>
+                        <input id="nascimento" type="date" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    <span class="numero-secao">02</span>
+                    Endereço residencial
+                </legend>
+
+                <div class="grid">
+                    <div class="campo">
+                        <label for="cep">CEP</label>
+                        <input id="cep" maxlength="9" inputmode="numeric"
+                            placeholder="00000-000" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="logradouro">Logradouro</label>
+                        <input id="logradouro" maxlength="100"
+                            placeholder="Rua ou avenida" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="numero">Número</label>
+                        <input id="numero" maxlength="10"
+                            placeholder="Número ou S/N" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="bairro">Bairro</label>
+                        <input id="bairro" maxlength="60"
+                            placeholder="Nome do bairro" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="cidade">Cidade</label>
+                        <input id="cidade" maxlength="60"
+                            placeholder="Nome da cidade" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="uf">Estado (UF)</label>
+                        <select id="uf" required>
+                            <option value="">Selecione o estado</option>
+                            <option>AC</option><option>AL</option>
+                            <option>AP</option><option>AM</option>
+                            <option>BA</option><option>CE</option>
+                            <option>DF</option><option>ES</option>
+                            <option>GO</option><option>MA</option>
+                            <option>MT</option><option>MS</option>
+                            <option>MG</option><option>PA</option>
+                            <option>PB</option><option>PR</option>
+                            <option>PE</option><option>PI</option>
+                            <option>RJ</option><option>RN</option>
+                            <option>RS</option><option>RO</option>
+                            <option>RR</option><option>SC</option>
+                            <option>SP</option><option>SE</option>
+                            <option>TO</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    <span class="numero-secao">03</span>
+                    Informações do curso
+                </legend>
+
+                <div class="grid">
+                    <div class="campo largo">
+                        <label for="curso">Curso SENAI</label>
+                        <select id="curso" required>
+                            <option value="">Selecione o curso desejado</option>
+                            <option>Desenvolvimento de Sistemas</option>
+                            <option>Desenvolvimento Web</option>
+                            <option>Informática Básica</option>
+                            <option>Redes de Computadores</option>
+                            <option>Automação Industrial</option>
+                            <option>Eletrotécnica</option>
+                            <option>Mecânica Industrial</option>
+                            <option>Segurança do Trabalho</option>
+                            <option>Logística</option>
+                            <option>Design Gráfico</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="turno">Turno</label>
+                        <select id="turno" required>
+                            <option value="">Selecione o turno</option>
+                            <option>Manhã</option>
+                            <option>Tarde</option>
+                            <option>Noite</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="modalidade">Modalidade</label>
+                        <select id="modalidade" required>
+                            <option value="">Selecione a modalidade</option>
+                            <option>Presencial</option>
+                            <option>EAD</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="acoes">
+                <button type="submit" class="btn-principal">
+                    + Cadastrar aluno
+                </button>
+                <button type="button" class="btn-secundario" id="limpar">
+                    Limpar formulário
+                </button>
+                <button type="button" class="btn-baixar" id="baixar">
+                    ↓ Baixar relatório TXT
+                </button>
+            </div>
+
+            <p class="aviso">
+                Os campos são verificados antes do cadastro. Os registros são
+                armazenados localmente neste navegador.
+            </p>
+        </form>
+    </section>
+
+    <section class="painel">
+        <div class="painel-topo">
+            <div>
+                <h3>Alunos cadastrados</h3>
+                <p>Consulte os registros salvos neste navegador.</p>
+            </div>
+            <span class="tag" id="etiqueta-total">0 REGISTROS</span>
+        </div>
+
+        <div class="lista-alunos" id="lista">
+            <p class="vazio">Nenhum cadastro realizado até o momento.</p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="rodape">
+    SENAI · Projeto acadêmico de cadastro de alunos
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
